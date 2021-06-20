@@ -1,0 +1,91 @@
+
+<ModButton@Button>
+    font_size:'20dp'
+    bold: True
+
+<IceBlockScreen>:
+    name: 'ice_block'
+    id: ice_block_id
+    lbl_quantity : lbl_quantity
+    user_logged: lbl_user_logged
+    
+    canvas.before:
+        Color:
+            rgba: (0, 0.655, 0.894, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: [10,10]
+            
+            size_hint_y: None
+            height: 70
+            canvas.before:
+                Color:
+                    
+                    rgba: (0, 0.42, 0.573, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            
+            Button:
+                text: 'Back'
+                font_size: '20dp'
+                bold: True
+                size_hint_x: .3
+                on_press: root.manager.current = 'main_screen'
+                background_color: (0, 0.22, 0.373, 1.0)
+            Label:
+                id: lbl_user_logged
+                text: 'User:'
+                font_size: '20dp'
+                bold: True
+                size_hint_x: .7
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [20,20]
+            spacing: 10
+            BoxLayout:
+                size_hint_y: None
+                height: '150dp'
+                padding: [20,20]
+                spacing: 10
+                
+                Button:
+                    text: '-1/4'
+                    font_size: '20dp'
+                    bold: True
+                    on_press: root.update_ice_quantity(-.25)
+                Label:
+                    id: lbl_quantity
+                    text: '1.00'
+                    font_size: '30dp'
+                    bold: True
+                Button:
+                    text: '+1/4'
+                    font_size: '20dp'
+                    bold: True
+                    on_press: root.update_ice_quantity(+.25)
+            BoxLayout:
+                
+            BoxLayout:
+                size_hint_y: None
+                height: '80dp'
+                padding: [1,1]
+                spacing: 10
+                Button:
+                    
+                    
+                    
+                    text: 'Vender'
+                Button:
+                    
+                    
+                    
+                    text: 'Filtrar'
+                
+        
+                    
+            

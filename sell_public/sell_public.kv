@@ -1,0 +1,141 @@
+
+<ModButton@Button>
+    font_size:'20dp'
+    bold: True
+
+<SellPublicScreen>:
+    name: 'sell_public'
+    id: sell_public_id
+    lbl_quantity_ice_block : lbl_quantity_ice_block
+    lbl_quantity_ice_bag : lbl_quantity_ice_bags
+    lbl_quantity_water_19L : lbl_quantity_water_19L
+    user_logged: lbl_user_logged
+    
+    canvas.before:
+        Color:
+            rgba: (0, 0.655, 0.894, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: [10,10]
+            
+            size_hint_y: None
+            height: 70
+            canvas.before:
+                Color:
+                    
+                    rgba: (0, 0.42, 0.573, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            
+            Button:
+                text: 'Back'
+                font_size: '20dp'
+                bold: True
+                size_hint_x: .3
+                on_press: root.manager.current = 'sales_public'
+                background_color: (0, 0.22, 0.373, 1.0)
+            Label:
+                id: lbl_user_logged
+                text: 'User:'
+                font_size: '20dp'
+                bold: True
+                size_hint_x: .7
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [20,20]
+            spacing: 10
+            Label:
+                text: 'Barras'
+                font_size: '20dp'
+                bold: True
+            BoxLayout:
+                size_hint_y: None
+                height: '150dp'
+                padding: [20,20]
+                spacing: 10
+                
+                Button:
+                    text: '-1/4'
+                    font_size: '20dp'
+                    bold: True
+                    on_press: root.update_quantity(-.25, lbl_quantity_ice_block)
+                Label:
+                    id: lbl_quantity_ice_block
+                    text: '0.00'
+                    font_size: '30dp'
+                    bold: True
+                Button:
+                    text: '+1/4'
+                    font_size: '20dp'
+                    bold: True
+                    on_press: root.update_quantity(+.25, lbl_quantity_ice_block)
+            Label:
+                text: 'Cubos'
+                font_size: '20dp'
+                bold: True
+            BoxLayout:
+                size_hint_y: None
+                height: '150dp'
+                padding: [20,20]
+                spacing: 10
+                
+                Button:
+                    text: '-1'
+                    font_size: '20dp'
+                    bold: True
+                    on_press: root.update_quantity(-1, lbl_quantity_ice_bags)
+                Label:
+                    id: lbl_quantity_ice_bags
+                    text: '0'
+                    font_size: '30dp'
+                    bold: True
+                Button:
+                    text: '+1'
+                    font_size: '20dp'
+                    bold: True
+                    on_press: root.update_quantity(+1, lbl_quantity_ice_bags)
+            Label:
+                text: 'Garrafon'
+                font_size: '20dp'
+                bold: True
+            BoxLayout:
+                size_hint_y: None
+                height: '150dp'
+                padding: [20,20]
+                spacing: 10
+                
+                Button:
+                    text: '-1'
+                    font_size: '20dp'
+                    bold: True
+                    on_press: root.update_quantity(-1, lbl_quantity_water_19L)
+                Label:
+                    id: lbl_quantity_water_19L
+                    text: '0'
+                    font_size: '30dp'
+                    bold: True
+                Button:
+                    text: '+1'
+                    font_size: '20dp'
+                    bold: True
+                    on_press: root.update_quantity(+1, lbl_quantity_water_19L)
+            BoxLayout:
+                
+            BoxLayout:
+                size_hint_y: None
+                height: '80dp'
+                padding: [1,1]
+                spacing: 10
+                Button:
+                    text: 'Confirmar venta'
+                    on_press: root.sell_items()
+                
+                
+        
+                    
+            

@@ -1,0 +1,125 @@
+
+
+<ModButton@Button>
+    font_size:'20dp'
+    bold: True
+
+<SalesPublicScreen>:
+    name: 'sales_public'
+    user_logged: lbl_user_logged
+    sales_layout: grid_layout_id
+    
+    canvas.before:
+        Color:
+            rgba: (0, 0.655, 0.894, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: [10,10]
+            
+            size_hint_y: None
+            height: 70
+            canvas.before:
+                Color:
+                    
+                    rgba: (0, 0.42, 0.573, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            
+            Button:
+                text: 'Back'
+                font_size: '20dp'
+                bold: True
+                size_hint_x: .3
+                on_press: root.manager.current = 'main_screen'
+                background_color: (0, 0.22, 0.373, 1.0)
+            Label:
+                id: lbl_user_logged
+                text: 'User:'
+                font_size: '20dp'
+                bold: True
+                size_hint_x: .7
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [5,5]
+            spacing: 10
+            BoxLayout:
+                size_hint_y: None
+                height: '50dp'
+                padding: [10,10]
+                spacing: 10
+                Label:
+                    text: 'Time'
+                    size_hint_x: .4
+                    font_size: '15dp'
+                    bold: True
+                Label:
+                    text: 'Product'
+                    size_hint_x: .2
+                    font_size: '15dp'
+                    bold: True
+                Label:
+                    text: 'Quantity'
+                    size_hint_x: .2
+                    font_size: '15dp'
+                    bold: True
+                Label:
+                    text: 'Total'
+                    size_hint_x: .2
+                    font_size: '15dp'
+                    bold: True
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+                GridLayout:
+                    id: grid_layout_id
+                    size_hint_y: None
+                    height: self.minimum_height
+                    spacing: 10
+                    cols: 1
+                    BoxLayout:
+                        size_hint_y: None
+                        size_hint_x: 1
+                        height: '40dp'
+                        padding: [10,10]
+                        spacing: 10
+                        Label:
+                            text: '31 Minutes Ago'
+                            size_hint_x: .4
+                            font_size: '15dp'
+                            bold: True
+                        Label:
+                            text: 'Ice Block'
+                            size_hint_x: .2
+                            font_size: '15dp'
+                            bold: True
+                        Label:
+                            text: '2.25'
+                            size_hint_x: .2
+                            font_size: '15dp'
+                            bold: True
+                        Label:
+                            text: '$324.5'
+                            size_hint_x: .2
+                            font_size: '15dp'
+                            bold: True
+                    
+
+            BoxLayout:
+                size_hint_y: None
+                height: '80dp'
+                padding: [1,1]
+                spacing: 10
+                Button:
+                    text: 'Vender'
+                    on_press: root.open_sell_public()
+                Button:
+                    text: 'Filtrar'
+                
+        
+                    
+            

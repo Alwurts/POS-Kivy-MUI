@@ -1,0 +1,64 @@
+
+<ModButton@Button>
+    font_size:'20dp'
+    bold: True
+    background_color: (0, 0.22, 0.373, 1.0)
+
+<MainScreen>:
+    name: 'main_screen'
+    id: main_screen_id
+    user_logged: lbl_user_logged
+    canvas.before:
+        Color:
+            rgba: (0, 0.655, 0.894, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: [10,10]
+            
+            size_hint_y: None
+            height: 70
+            canvas.before:
+                Color:
+                    
+                    rgba: (0, 0.42, 0.573, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Label:
+                id: lbl_user_logged
+                text: 'User:'
+                font_size: '20dp'
+                bold: True
+                size_hint_x: .7
+            Button:
+                text: 'Logout'
+                font_size: '20dp'
+                bold: True
+                size_hint_x: .3
+                on_press: root.manager.current = 'login'
+                background_color: (0, 0.22, 0.373, 1.0)
+        GridLayout:
+            size_hint:(1,1)
+            padding: [10,10]
+            spacing: 10
+            row_force_default:True 
+            row_default_height:'100sp'
+            cols: 2
+        
+            ModButton:
+                text: 'Repartidores'
+
+            ModButton:
+                text: 'Barras'
+                on_press: root.manager.current = 'ice_block'
+            ModButton:
+                text: 'Ventas'
+                on_press: root.open_sales_public()
+            ModButton:
+                text: 'Configuracion'
+                    
+            

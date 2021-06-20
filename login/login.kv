@@ -1,0 +1,29 @@
+
+<LoginScreen>:
+    name: 'login'
+    id: login_screen
+ 
+    buttons_layout: accounts_layout
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [15,5]
+        spacing: 40
+        MDLabel:
+            text: 'Inicia sesion'
+            font_style: 'H2'
+            halign: 'center'
+            size_hint_y: .2
+            
+            
+        GridLayout:
+            id: accounts_layout
+            size_hint_y: None
+            height: self.minimum_height
+            spacing: 30
+            cols: 2
+            
+            
+            
+                   
+        BoxLayout:
+                
