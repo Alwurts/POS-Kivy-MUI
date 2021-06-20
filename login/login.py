@@ -22,7 +22,7 @@ class LoginScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.load_users()
-        self.load_users()
+        
     
     def load_users (self):
         users = get_users()
@@ -31,8 +31,8 @@ class LoginScreen(Screen):
             
 
             
-            temp_box = BoxLayout(orientation='vertical', size_hint_y= None, spacing=10, height=100)
-            temp_icon = MDIconButton(icon='account',user_font_size= "50sp",md_bg_color= (0, 0, .8, .5))
+            temp_box = BoxLayout(orientation='vertical', size_hint_y= None, spacing=30, height=100)
+            temp_icon = MDIconButton(icon=r'account',user_font_size= "70sp",md_bg_color= (0.105, 0.376, 0.709, 1))
             temp_icon.bind(on_press=self.login)
             temp_anchor = AnchorLayout(size_hint_y= None, height= temp_icon.height)
             temp_anchor.add_widget(temp_icon)
@@ -42,6 +42,7 @@ class LoginScreen(Screen):
             temp_label = MDLabel(text=user,
                                 font_style= 'H5',
                                 halign= "center")
+            
 
             temp_box.add_widget(temp_label)
             
@@ -54,9 +55,9 @@ class LoginScreen(Screen):
         '''
 
     def login(self, user):
-        
+        #print(user.parent.parent.children[0].text)
         self.parent.current = 'password_input'
-        self.parent.parent.password_input_screen.user = user.text
+        self.parent.parent.password_input_screen.user = user.parent.parent.children[0].text
         
 
 class LoginApp(MDApp):
