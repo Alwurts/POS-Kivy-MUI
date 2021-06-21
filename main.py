@@ -2,6 +2,7 @@ from kivymd.app import MDApp
 from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
+from kivymd.theming import ThemeManager
 
 from scr.MD.login.login import LoginScreen
 from scr.MD.password_input.password_input import PasswordInputScreen
@@ -21,11 +22,11 @@ class MainWindow(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-
+        self.theme_cls  = ThemeManager()
         # Declare the screens
         self.login_screen = LoginScreen()
         self.password_input_screen = PasswordInputScreen()
-        #self.main_screen = MainScreen()
+        self.main_screen = MainScreen()
         '''
         self.ice_block_screen = IceBlockScreen()
         self.sales_public_screen = SalesPublicScreen()
@@ -34,7 +35,7 @@ class MainWindow(BoxLayout):
         # Added it to the screen manager
         self.screen_manager.add_widget(self.login_screen)
         self.screen_manager.add_widget(self.password_input_screen)
-        #self.screen_manager.add_widget(self.main_screen)
+        self.screen_manager.add_widget(self.main_screen)
         '''
         self.screen_manager.add_widget(self.ice_block_screen)
         self.screen_manager.add_widget(self.sales_public_screen)
@@ -43,7 +44,9 @@ class MainWindow(BoxLayout):
 
 class MainApp(MDApp):
     def build(self):
-
+        #self.theme_cls.colors = colors
+        self.theme_cls.primary_palette = "Blue"
+        self.theme_cls.accent_palette = "Red"
         return MainWindow()
 
 if __name__ == '__main__':

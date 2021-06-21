@@ -9,13 +9,13 @@ from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
 
 from kivy.lang import Builder
-Builder.load_file(r'kivy_env\scr\MD\sales_public\sales_public.kv')
+Builder.load_file(r'kivy_env\scr\MD\overview_screen\overview_screen.kv')
 
 
 from scr.nonMD.database_functions import get_items
-#from database_functions import *
 
-class SalesPublicScreen(Screen):
+
+class OverviewScreen(Screen):
 
 
     def __init__(self, **kwargs):
@@ -67,9 +67,9 @@ class SalesPublicScreen(Screen):
    
         
 
-class SalesPublicApp(MDApp):
+class OverviewApp(MDApp):
     def build(self):
-        return SalesPublicScreen()
+        return OverviewScreen()
 
 if __name__ == '__main__':
 
@@ -81,5 +81,5 @@ if __name__ == '__main__':
 
     Window.size = (window_size[0], window_size[1])
 
-    sales_public_screen_app = SalesPublicApp()
+    sales_public_screen_app = OverviewApp()
     sales_public_screen_app.run()

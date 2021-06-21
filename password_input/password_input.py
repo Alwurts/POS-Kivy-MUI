@@ -13,9 +13,12 @@ Builder.load_file(r'kivy_env\scr\MD\password_input\password_input.kv')
 from scr.nonMD.database_functions import get_password_with_name
   
 class PasswordInputScreen(Screen):
+    
     show_password = ObjectProperty()
     btn_cancel_delete = ObjectProperty()
     lbl_info_field = ObjectProperty()
+    lbl_user_to_log = ObjectProperty()
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.pwd_array = []
@@ -60,9 +63,12 @@ class PasswordInputScreen(Screen):
         '''
         temp = ""
         if (temp.join(self.pwd_array) == temp_pass):
-            #self.parent.parent.main_screen.user_logged.text = 'User: ' + self.user
+            
+            self.parent.parent.main_screen.children[0].children[0].children[0].lbl_user_logged.text = self.user
+            self.parent.parent.main_screen.user_logged = self.user
+            
             self.reset_screen()
-            #self.parent.current = 'main_screen'
+            self.parent.current = 'main_screen'
           
         else:
             self.lbl_info_field.text = 'Contrasena incorrecta'

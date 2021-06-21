@@ -57,7 +57,10 @@ class LoginScreen(Screen):
     def login(self, user):
         #print(user.parent.parent.children[0].text)
         self.parent.current = 'password_input'
-        self.parent.parent.password_input_screen.user = user.parent.parent.children[0].text
+        temp_user = user.parent.parent.children[0].text
+        print(temp_user)
+        self.parent.parent.password_input_screen.user = temp_user
+        self.parent.parent.password_input_screen.lbl_user_to_log.text = temp_user
         
 
 class LoginApp(MDApp):
