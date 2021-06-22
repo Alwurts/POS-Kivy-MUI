@@ -24,7 +24,7 @@ class MainScreen(Screen):
 
         self.screen_manager.add_widget(self.overview_screen)
         self.screen_manager.add_widget(self.sales_public_screen)
-        
+
     '''
     def log_out(self):
         self.parent.current = 'login'
@@ -51,6 +51,12 @@ class ContentNavigationDrawer(BoxLayout):
 
     def reset_screen(self):
         self.lbl_user_logged.text = ''
+
+    def open_sales_public(self):
+        self.main_screen.sales_public_screen.load_data()
+        #self.parent.parent.sales_public_screen.load_data()
+        #self.parent.parent.sales_public_screen.user_logged.text = self.user_logged.text
+        self.screen_manager.current = 'sales_public'
     
 
 class MainScreenApp(MDApp):

@@ -51,7 +51,7 @@
                 text: "Ventas Publico"
                 on_press:
                     root.nav_drawer.set_state("close")
-                    root.screen_manager.current = "sales_public"
+                    root.open_sales_public()
                 IconLeftWidget:
                     icon: "account-cash"
 
@@ -84,3 +84,4 @@
                 screen_manager: screen_manager
                 nav_drawer: nav_drawer
                 main_screen: main_screen_id
+                

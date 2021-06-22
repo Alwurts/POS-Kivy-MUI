@@ -6,6 +6,7 @@
 
 <SalesPublicScreen>:
     name: 'sales_public'
+    md_list_sales: md_list_id
     
     BoxLayout:
         orientation: 'vertical'
@@ -17,6 +18,7 @@
         ScrollView:
 
             MDList:
+                id: md_list_id
                 ThreeLineAvatarListItem:
                     text: "1/4 Barra"
                     secondary_text: "$40.00"
@@ -24,7 +26,11 @@
 
                     ImageLeftWidget:
                         source: r"kivy_env\scr\MD\assets\icon_water_19L.png"
-                            
+    MDFloatingActionButtonSpeedDial:
+        label_text_color: 1,1,1,1
+
+        data: {'Vender barra': r'kivy_env\scr\MD\assets\icon_ice_block.png','Vender cubo': r'kivy_env\scr\MD\assets\icon_ice_cube.png','Vender garrafon': r'kivy_env\scr\MD\assets\icon_water_19L.png'}
+        root_button_anim: True                       
     
                 
         
