@@ -4,10 +4,14 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.properties import ObjectProperty
 from kivymd.theming import ThemeManager
 
+from login.login import LoginScreen
+from password_input.password_input import PasswordInputScreen
+from main_screen.main_screen import MainScreen
+'''
 from scr.MD.login.login import LoginScreen
 from scr.MD.password_input.password_input import PasswordInputScreen
 from scr.MD.main_screen.main_screen import MainScreen
-'''
+
 from main_screen.main_screen import MainScreen
 from ice_block.ice_block import IceBlockScreen
 from sales_public.sales_public import SalesPublicScreen
@@ -50,7 +54,7 @@ class MainApp(MDApp):
         return MainWindow()
 
 if __name__ == '__main__':
-    '''
+    
     #window_size = [1080, 2280] # Pixels of OnePlus 6
     window_size = [540, 960] # Pixels of Samsung Galaxy Prime Plus
     divide_screen_by = 1
@@ -59,6 +63,6 @@ if __name__ == '__main__':
     window_size[1] /= divide_screen_by 
 
     Window.size = (window_size[0], window_size[1])
-    '''
+    
     main_app = MainApp()
     main_app.run()

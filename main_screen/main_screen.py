@@ -5,11 +5,11 @@ from kivy.properties import ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.list import MDList
 
-from scr.MD.sales_public.sales_public import SalesPublicScreen
-from scr.MD.overview_screen.overview_screen import OverviewScreen   
+from sales_public.sales_public import SalesPublicScreen
+from overview_screen.overview_screen import OverviewScreen   
 
 from kivy.lang import Builder
-Builder.load_file(r'kivy_env\scr\MD\main_screen\main_screen.kv')
+Builder.load_file(r'main_screen\main_screen.kv')
 
 
 class MainScreen(Screen):

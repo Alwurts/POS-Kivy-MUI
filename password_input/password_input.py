@@ -7,10 +7,10 @@ from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
 
 from kivy.lang import Builder
-Builder.load_file(r'kivy_env\scr\MD\password_input\password_input.kv')
+Builder.load_file(r'password_input\password_input.kv')
 
 #from database_functions import *
-from scr.nonMD.database_functions import get_password_with_name
+from database_functions import get_password_with_name
   
 class PasswordInputScreen(Screen):
     

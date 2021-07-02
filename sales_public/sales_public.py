@@ -12,10 +12,10 @@ from kivymd.uix.screen import MDScreen
 from kivy.properties import ObjectProperty
 
 from kivy.lang import Builder
-Builder.load_file(r'kivy_env\scr\MD\sales_public\sales_public.kv')
+Builder.load_file(r'sales_public\sales_public.kv')
 
 
-from scr.nonMD.database_functions import get_items
+from database_functions import get_items
 #from database_functions import *
 
 class SalesPublicScreen(MDScreen):
@@ -49,11 +49,11 @@ class SalesPublicScreen(MDScreen):
                                             tertiary_text= str(row[0]))
 
             if str(row[1]) == 'ice block':
-                temp_image_item = ImageLeftWidget(source= r"kivy_env\scr\MD\assets\icon_ice_block.png")
+                temp_image_item = ImageLeftWidget(source= r"assets\icon_ice_block.png")
             elif str(row[1]) == 'ice bag':
-                temp_image_item = ImageLeftWidget(source= r"kivy_env\scr\MD\assets\icon_ice_cube.png")
+                temp_image_item = ImageLeftWidget(source= r"assets\icon_ice_cube.png")
             elif str(row[1]) == 'water 19L':
-                temp_image_item = ImageLeftWidget(source= r"kivy_env\scr\MD\assets\icon_water_19L.png")
+                temp_image_item = ImageLeftWidget(source= r"assets\icon_water_19L.png")
 
             temp_list_item.add_widget(temp_image_item)
 

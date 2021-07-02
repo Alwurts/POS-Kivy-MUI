@@ -10,9 +10,9 @@ from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
 
 from kivy.lang import Builder
-Builder.load_file(r'kivy_env\scr\MD\login\login.kv')
+Builder.load_file(r'login\login.kv')
 
-from scr.nonMD.database_functions import get_users
+from database_functions import get_users
   
 class LoginScreen(Screen):
 

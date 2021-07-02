@@ -9,10 +9,10 @@ from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
 
 from kivy.lang import Builder
-Builder.load_file(r'kivy_env\scr\MD\overview_screen\overview_screen.kv')
+Builder.load_file(r'overview_screen\overview_screen.kv')
 
 
-from scr.nonMD.database_functions import get_items
+from database_functions import get_items
 
 
 class OverviewScreen(Screen):
