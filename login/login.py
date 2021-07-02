@@ -31,8 +31,8 @@ class LoginScreen(Screen):
             
 
             
-            temp_box = BoxLayout(orientation='vertical', size_hint_y= None, spacing=30, height=100)
-            temp_icon = MDIconButton(icon=r'account',user_font_size= "70sp",md_bg_color= (0.105, 0.376, 0.709, 1))
+            temp_box = BoxLayout(orientation='vertical', size_hint_y= None, spacing="50dp", height="100dp")
+            temp_icon = MDIconButton(icon=r'account',user_font_size= "100sp",md_bg_color= (0.105, 0.376, 0.709, 1))
             temp_icon.bind(on_press=self.login)
             temp_anchor = AnchorLayout(size_hint_y= None, height= temp_icon.height)
             temp_anchor.add_widget(temp_icon)
