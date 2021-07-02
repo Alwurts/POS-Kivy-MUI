@@ -54,7 +54,7 @@ class MainApp(MDApp):
         return MainWindow()
 
 if __name__ == '__main__':
-    
+    '''
     #window_size = [1080, 2280] # Pixels of OnePlus 6
     window_size = [540, 960] # Pixels of Samsung Galaxy Prime Plus
     divide_screen_by = 1
@@ -64,5 +64,6 @@ if __name__ == '__main__':
 
     Window.size = (window_size[0], window_size[1])
     
+    '''
     main_app = MainApp()
     main_app.run()
